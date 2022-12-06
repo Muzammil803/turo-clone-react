@@ -3,6 +3,68 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {CarOutlined ,CalculatorOutlined ,ToolOutlined ,KeyOutlined ,FormOutlined} from '@ant-design/icons'
+
+
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
+
+function LoginModal() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <span  onClick={handleShow}>
+       Login
+      </span>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email </Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                // autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Password </Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="pass****"
+                autoFocus
+              />
+            </Form.Group>
+            
+          <Button variant="primary" onClick={handleClose}>
+           Login
+          </Button>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+         
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
+
+
+
+
+
+
+
+
+
 function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
 
@@ -23,17 +85,17 @@ function OffCanvasExample({ name, ...props }) {
         </Offcanvas.Header>
         <Offcanvas.Body>
          <div className='dropdown-a'>
-          <p>Login</p>
+          <p ><LoginModal/></p>
           <p>Sign up</p>
           <p><CarOutlined/> Become a host </p>
           </div>
          <div className='dropdown-b'>
-          <p><CalculatorOutlined /> Calculator</p>
-          <p><ToolOutlined /> Host tool </p>
-          <p> <KeyOutlined /> How tour works</p>
-          <p><ToolOutlined /> Host tool </p>
-          <p><CalculatorOutlined /> Calculator</p>
-          <p><FormOutlined />Legal</p>
+          <p><CalculatorOutlined />  Calculator</p>
+          <p><ToolOutlined />  Host tool </p>
+          <p> <KeyOutlined />  How tour works</p>
+          <p><ToolOutlined />  Host tool </p>
+          <p><CalculatorOutlined />  Calculator</p>
+          <p><FormOutlined />  Legal</p>
 
          </div>
         </Offcanvas.Body>

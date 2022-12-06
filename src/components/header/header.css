@@ -80,7 +80,8 @@ align-items:center ;
     opacity: 0 !important;
 }
 .offcanvas-body {
-padding: 0;
+padding-left: 0 !important;
+padding-right: 0 !important;
 }
 .offcanvas-end {
     width: 320px !important; 
@@ -99,6 +100,7 @@ box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 
 }
 .dropdown-b{
 margin-top: 20px;
+
 }
 .dropdown-head{
     display: none !important;
@@ -117,4 +119,15 @@ border-radius: 0;
 /* -ms-transform-origin-x:top !important; */
 transition: 1.7s !important;
 }
+}
+
+.dropdown-a>p,.dropdown-b>p{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+   font-stretch: expanded;
+   padding: 4px 0px 4px 16px;
+}
+.dropdown-a>p:hover , .dropdown-b>p:hover{
+    background-color: #e5e5e9;
 }
